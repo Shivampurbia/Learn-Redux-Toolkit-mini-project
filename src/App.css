@@ -1,0 +1,164 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  margin-top: 3rem;
+  height: 20vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+  width: 72%;
+}
+.btn{
+  box-shadow: 1px 3px 4px black;
+
+  background-color:#223c57 ;
+  color: white;
+  cursor: pointer;
+  margin: 1rem;
+  border-radius: 5px;
+  border: 5px solid #223c57;;
+}
+.fontt{
+  margin-right: 4rem;
+}
+.fontd{
+  font-weight: 600;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+::-webkit-scrollbar{
+  width: 4px;
+  height: 1px;
+}
+::-webkit-scrollbar-track{
+  background-color:  #1C3955;
+  
+}
+::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 10px;
+  
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.bkmrk{
+ color: white;
+  box-shadow: 1px 3px 4px black;
+  cursor: pointer;
+  background-color:#1C3955;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 3rem;
+  position: fixed;
+  bottom: 0;
+  /* left:  */
+}
+.bkmrk:hover{
+  padding: 0.95rem;
+}
+.card{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(15, 30, 63);
+  height: 5rem;
+  width: 35rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.527);
+
+
+}
+.card-parent{
+  padding-top: 14rem;
+  max-height: 18rem;
+  overflow-x: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card-in{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-item{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.imgg2{
+  margin-left: 1rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+
+}
+.btn2{
+  border: none;
+  color: white;
+   box-shadow: 1px 3px 4px black;
+   cursor: pointer;
+   background-color:#1C3955;
+   padding: 1rem;
+   border-radius: 1rem;
+   margin: 3rem;
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   /* left:  */
+ }
+ .btn2:hover{
+   padding: 0.95rem;
+ }
+ .inputst{
+   border: 1px solid gray;
+   border-radius: 4px;
+   padding: 0.5rem;
+   margin-bottom: 4px;
+ }
+.box{
+ color: white;
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+width: 30%;
+position: fixed;
+top:30%;
+left: 35%;
+border-radius: 1rem;
+}
