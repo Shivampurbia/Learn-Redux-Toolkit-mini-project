@@ -45,9 +45,19 @@ export const formHandler = createSlice({
     addToBookmark:(state,action)=>{
       console.log(action.payload)
       state.bookmarks = action.payload
+      localStorage.setItem("bookmarks",JSON.stringify(state.bookmarks))
+    },
+    removeBookmark:(state,action)=>{
+      console.log('Deleting this one',action.payload);
+      state.bookmarks = state.bookmarks.filter((bookmark,index) => {
+       if((index+1)!==action.payload){
+        return bookmark 
+       }
+      })
+      localStorage.setItem("bookmarks",JSON.stringify(state.bookmarks))
     }
-  },
 
+  },
   extraReducers:{
     [getImages.pending]:(state)=>{
       state.data.pending = true;
@@ -61,9 +71,8 @@ export const formHandler = createSlice({
       state.data.pending = false;
       state.data.error = true;
     }
-
   }
 })
 
-export const {addToBookmark,emptyData, submitData,loginHandler } = formHandler.actions;
+export const {removeBookmark,addToBookmark,emptyData, submitData,loginHandler } = formHandler.actions;
 export default formHandler.reducer;

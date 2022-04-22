@@ -8,7 +8,7 @@ function Product() {
     const navigate = useNavigate();
     const { id } = useParams();
     const product = useSelector(state=>state.formData.data.data[id-1]);
-    const bookmarks = useSelector(state=>state.formData.bookmarks);
+    const bookmarks = JSON.parse(localStorage.getItem("bookmarks"))
     console.log(product)
 
     const addToBookkmarkHandler = ()=>{
@@ -19,26 +19,29 @@ function Product() {
     }
   return (
     <div style={{display:"flex",flexDirection:"row"}}>
+        <div style={{width:"40%"}}>
         <img alt='' src={product.image} width={400} height={400} style={{borderRadius:"3rem",marginLeft:"4rem"}}></img>
-        <div>
+
+        </div>
+        <div style={{width:"60%"}}>
         <br></br>
         <div className='row'>
-            <span className='fontt'>Title: </span>
+            <div className='fontt'>Title: </div>
             <span className='fontd'>{product.title}</span>
         </div>
         <br></br>
         <div className='row'>
-            <span className='fontt'>Price: </span>
+            <div className='fontt'>Price: </div>
             <span className='fontd'>{product.price}</span>
         </div>
         <br></br>
         <div className='row'>
-            <span className='fontt'>Category: </span>
+            <div className='fontt'>Category: </div>
             <span className='fontd'>{product.category}</span>
         </div>
         <br></br>
          <div className='row'>
-            <span className='fontt'>Description: </span>
+            <div className='fontt'>Description: </div>
             <span className='fontd'>{product.description}</span>
         </div>
         <div>

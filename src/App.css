@@ -30,17 +30,21 @@
   border: 5px solid #223c57;;
 }
 .fontt{
-  margin-right: 4rem;
+  width: 20%;
+  text-align: left;
 }
 .fontd{
+  width: 80%;
+  text-align: left;
   font-weight: 600;
 }
 ::-webkit-scrollbar{
-  display: none;
+  /* display: none; */
 }
 ::-webkit-scrollbar{
-  width: 4px;
-  height: 1px;
+
+  width: 0px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track{
   background-color:  #1C3955;
@@ -106,8 +110,8 @@
 
 }
 .card-parent{
-  padding-top: 14rem;
-  max-height: 18rem;
+  padding-top: 4%;
+  max-height: 25rem;
   overflow-x: scroll;
   display: flex;
   justify-content: center;
@@ -161,4 +165,21 @@ position: fixed;
 top:30%;
 left: 35%;
 border-radius: 1rem;
+}
+.delbtn{
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1.3px solid white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.delbtn:hover{
+  background-color: rgb(216, 49, 49);
+  border: 1.3px solid rgb(216, 49, 49);
+}
+.element{
+  width: auto;
+  margin-right: 2.5rem;
+  margin-bottom: 2rem;
 }

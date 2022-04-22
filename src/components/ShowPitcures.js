@@ -9,9 +9,9 @@ function ShowPitcures() {
     const loggedIn = useSelector(state=>state.formData.loggedIn);
     const images = useSelector(state=>state.formData.data.data);
     const pending = useSelector(state=>state.formData.data.pending);
-
+   
     useEffect(()=>{
-        if(loggedIn===true && pending === null){
+        if(loggedIn===true && (pending === null || pending===false)){
           dispatch(getImages())
         }
       },[])
@@ -24,7 +24,10 @@ function ShowPitcures() {
   return (
     <div className='element' style={{display:"flex",marginLeft:"3rem",justifyContent:"center",flexDirection:"row",overflowY:"scroll"}}>
         {pending===false ? images.map((image,index)=>
-            <img onClick={(e)=>showImgDetails(image.id)} className='imgg' alt='' src={image.image} width={200} height={200}></img>
+        <div onClick={(e)=>showImgDetails(image.id)} className='pickgradient'>
+            <img  className='imgg' alt='' src={image.image} width={200} height={200}></img>
+            <div className='ptag'>₹ {image.price}</div>
+        </div>
         )
       :
       <div>Loading....</div>

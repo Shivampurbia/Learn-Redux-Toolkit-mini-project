@@ -12,8 +12,29 @@ code {
     monospace;
 }
 .imgg{
-  margin-right: 1rem;
+  object-fit:fill;
+ 
+  margin-right: 2rem;
   border-radius: 1.5rem;
+  
+  position:relative;
+z-index: -1;
+
+  
+
+}
+.pickgradient {
   cursor: pointer;
+  display: inline-block;
+background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%,rgb(0, 0, 0) 100%); /* Chrome10+,Safari5.1+ */
+ 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+.ptag{
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.808);
+  position:relative;
+  z-index: 11;
+  margin-bottom: 1rem;
 }
 
