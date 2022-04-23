@@ -12,6 +12,19 @@ export const getImages = createAsyncThunk('getuserimg/data', async()=>{
   return response.data
 })
 
+export const getSimilarProducts = createAsyncThunk('getSimilarProducts/data', async(category)=>{
+  console.log('entering the function(getSimilarProducts)...')
+  const response = await axios
+  .get(`https://fakestoreapi.com/products/category/${category}`)
+  .catch((err) => {
+    console.log("Err: ", err);
+  });
+  console.log(response)
+  return response.data
+})
+
+
+
 const initialStateOfForm = {
   value:{
     name:"",
@@ -20,6 +33,11 @@ const initialStateOfForm = {
     address:""
   },
   data:{
+    data:[],
+    pending:null,
+    error:false
+  },
+  similarProducts:{
     data:[],
     pending:null,
     error:false
@@ -55,6 +73,9 @@ export const formHandler = createSlice({
        }
       })
       localStorage.setItem("bookmarks",JSON.stringify(state.bookmarks))
+    },
+    emptySimilarProduct:(state)=>{
+      state.similarProducts.data = []
     }
 
   },
@@ -70,9 +91,21 @@ export const formHandler = createSlice({
     [getImages.rejected]:(state)=>{
       state.data.pending = false;
       state.data.error = true;
+    },
+    [getSimilarProducts.pending]:(state)=>{
+      state.similarProducts.pending = true;
+      state.similarProducts.error = false;
+    },
+    [getSimilarProducts.fulfilled]:(state,action)=>{
+      state.similarProducts.pending = false;
+      state.similarProducts.data = action.payload;
+    },
+    [getSimilarProducts.rejected]:(state)=>{
+      state.similarProducts.pending = false;
+      state.similarProducts.error = true;
     }
   }
 })
 
-export const {removeBookmark,addToBookmark,emptyData, submitData,loginHandler } = formHandler.actions;
+export const {emptySimilarProduct,removeBookmark,addToBookmark,emptyData, submitData,loginHandler } = formHandler.actions;
 export default formHandler.reducer;

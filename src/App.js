@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <img  style={{objectFit:"cover"}} src='https://cdn-icons.flaticon.com/png/512/2954/premium/2954904.png?token=exp=1650547763~hmac=b73ed94a5bb38542122659ae5ef72d7a' className="App-logo" alt="logo" />       
+        {/* <img  style={{objectFit:"cover"}} src='https://cdn-icons.flaticon.com/png/512/2954/premium/2954904.png?token=exp=1650547763~hmac=b73ed94a5bb38542122659ae5ef72d7a' className="App-logo" alt="logo" />        */}
         <BrowserRouter>
       <Routes>
           <Route path='/' element={<Counter/>}></Route>

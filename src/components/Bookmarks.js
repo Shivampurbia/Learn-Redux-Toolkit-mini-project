@@ -19,7 +19,7 @@ function Bookmarks() {
     }
   return (
     <div style={{marginTop:"1rem"}} >
-        <span style={{fontWeight:"bold"}}>total bookmarks:{bookmarks.length}</span>
+        <span style={{fontWeight:"bold"}}>total items:{bookmarks.length}</span>
         <div className='card-parent'>
             {bookmarks!==[] ?
             bookmarks.map((bookmark,index)=>{
@@ -29,11 +29,11 @@ function Bookmarks() {
                     <div style={{display:"flex",flexDirection:"column"}}>
                         <span className='card-item'>{bookmark.title}</span>
                         <span>{bookmark.category}</span>
-                        <span>{bookmark.price}</span>
+                        <span style={{color:"green",fontWeight:"bold"}}>₹ {bookmark.price}</span>
                     </div>
                     <img alt='' width={60} height={60} className='imgg2' src={bookmark.image}></img>
                 </div>
-                <button onClick={(e)=>{removeBookmarkHandler(index+1)}} className='delbtn'>Delete </button>
+                <button onClick={(e)=>{removeBookmarkHandler(index+1)}} className='delbtn'>Remove </button>
                
                 
                

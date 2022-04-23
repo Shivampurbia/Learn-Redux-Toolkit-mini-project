@@ -29,7 +29,7 @@ function Dashboard() {
         {/* <button className='btn' onClick={(e)=>{navigate(-1)}}>Back</button> */}
         <button className='btn2' onClick={logoutHandler}>Logout</button>
       </div>
-      <div onClick={openBookmarks} className='bkmrk'>Bookmarks</div>
+      <div onClick={openBookmarks} className='bkmrk'>Cart</div>
     </div>
   )
 }
